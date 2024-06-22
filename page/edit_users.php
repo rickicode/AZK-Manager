@@ -106,6 +106,7 @@ include "page/header.php";
 
 					<div class="my-3 d-grid gap-2" id="button">
 						<button class="btn btn-primary btn-block" name="add">Create Account</button>
+						<a class="btn btn-secondary btn-block" href="/">Back</a>
 						<a class="btn btn-secondary btn-block" href="index.php">Back</a>
 					</div>
 				</form>
@@ -148,6 +149,7 @@ include "page/header.php";
 					</div>
 					<div class="my-3 d-grid gap-2">
 						<button class="btn btn-primary btn-block" name="ChangePass"></span>Change Password</button>
+						<a class="btn btn-secondary btn-block" href="/">Back</a>
 						<a class="btn btn-secondary btn-block" href="index.php">Back</a>
 					</div>
 				</form>
@@ -171,6 +173,7 @@ include "page/header.php";
 
 	function clear() {
 		$('#myform').closest('form').find("input[type=text], textarea").val("");
+		$('#button').html('<button class="btn btn-success btn-block " name="add">Add User</button><a class="btn btn-secondary btn-block" href="/">Back</a>');
 		$('#button').html('<button class="btn btn-success btn-block " name="add">Add User</button><a class="btn btn-secondary btn-block" href="index.php">Back</a>');
 	}
 </script>

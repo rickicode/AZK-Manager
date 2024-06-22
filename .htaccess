@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Jika URL tidak sesuai dengan file fisik atau direktori yang ada, arahkan ke index.php dengan parameter page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?page=$1 [L,QSA]

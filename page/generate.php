@@ -32,6 +32,9 @@ $getprofile = $API->comm("/ip/hotspot/user/profile/print");
                                 <h5 class="card-header text-dark" style="background-color: <?= $P['color']; ?>;"><?= $MikroTik['currency'] . $P['price']; ?></h5>
                                 <div class="card-body">
                                     <p class="card-text mb-0">
+                                        Durasi: <span class="text-primary fw-bold"><?= secondsToWords($P['duration']); ?></span><br>
+                                        Valid: <span class="text-primary fw-bold"><?= secondsToWords($P['validity']); ?></span><small class="text-secondary"> ( Pausable )</small><br>
+                                        Kuota: <span class="text-primary fw-bold"><?= $P['data'] == 0 ? 'Unlimited' : byteFormat($P['data'], "d", 0) ?></span><br>
                                         Duration: <span class="text-primary fw-bold"><?= secondsToWords($P['duration']); ?></span><br>
                                         Validity: <span class="text-primary fw-bold"><?= secondsToWords($P['validity']); ?></span><small class="text-secondary"> ( Pausable )</small><br>
                                         Data: <span class="text-primary fw-bold"><?= $P['data'] == 0 ? 'Unlimited' : byteFormat($P['data'], "d", 0) ?></span><br>
@@ -370,6 +373,7 @@ $getprofile = $API->comm("/ip/hotspot/user/profile/print");
                 var divsToAppend = "";
                 for (var i = 0; i < arr.length; i++) {
                     var obj = arr[i];
+                    var nomor = i + 1;
                     // console.log(obj)
                     errorAlert('Done generating ' + obj.id + ' codes!', "alert-success");
                     setTimeout(function() {
@@ -377,6 +381,22 @@ $getprofile = $API->comm("/ip/hotspot/user/profile/print");
                     }, 1000)
  
                     divsToAppend += `
+                    <table class="voucher" style="width: 145;">
+                        <tbody>
+                            <tr>
+                                <td class="rotate" style="font-weight: bold; border-right: 1px solid black; background-color:` + obj.color + `; -webkit-print-color-adjust: exact;" rowspan="6"><span style="padding-bottom: 5px;"><?= $MikroTik['currency'] ?> ` + obj.price + `</span></td>
+                                <td style="font-weight: bold;font-size: 12px;padding-left: 5px;background: #FBA1B7;color: white;text-align: center;" colspan="2"><span><?= $MikroTik['name'] ?></span><span style="text-align: right;font-size: 9px;">[` + nomor + `]</span></td>
+                                <!--<td style="font-weight: 600;font-size: 9px;" colspan="2">` + obj.name + `</td>-->
+                            </tr>
+                            <tr>
+                                <td style="width: 100%; font-weight: 600; font-size: 18px; text-align: center;">` + obj.code + `</td>
+                            </tr>
+                            ` + ((obj.duration >= "0") ? `<tr><td style="font-size: 11px;padding-right: 5px;text-align: end;background: #FFECAF;"> Durasi: ` + obj.duration + ` </td></tr>` : '') + `
+                            ` + ((obj.data != "0") ? `<tr><td style="font-size: 11px;padding-right: 5px;text-align: end;background: #FFECAF;"> Kuota: ` + obj.data + ` </td></tr>` : '') + `
+                            <tr>
+                                <td style="font-size: 11px;padding-right: 5px;text-align: end;background: #FFECAF;"> Valid: ` + obj.validity + ` </td>
+                            </tr>
+       
                     <table class="voucher" style="width: 120px;">
                         <tbody>
                             <tr>

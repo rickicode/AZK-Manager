@@ -122,6 +122,7 @@ function secondsToWords($seconds)
     $hours = (int)(($seconds - ($days * 86400)) / 3600);
     $mins = (int)(($seconds - $days * 86400 - $hours * 3600) / 60);
     $secs = (int)($seconds - ($days * 86400) - ($hours * 3600) - ($mins * 60));
+    return ($days ? $days . ($days > 1 ? ' hari ' : ' hari ') : "") . ($hours ? $hours . " jam " : "") . ($mins ? $mins . " menit " : "") . ($secs ? $secs . " detik" : "");
     return ($days ? $days . ($days > 1 ? ' days ' : ' day ') : "") . ($hours ? $hours . " hours " : "") . ($mins ? $mins . " mins " : "") . ($secs ? $secs . " secs" : "");
 }
 // Format data bytes

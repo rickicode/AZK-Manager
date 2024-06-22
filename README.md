@@ -131,7 +131,6 @@
 			:local getSellerIncome [:put ([/system script get [find name=$vendo] source])];
 			:local getSellerSales ($amt + $getSellerIncome);
 			/system script set source="$getSellerSales" comment="VendoSales,$addMonthly,$getLastSales,$addDaily" $vendo;
-			:if ($enableTelegram=1) do={/tool fetch url="https://api.telegram.org/bot$telegramToken/sendmessage?chat_id=$chatId&text=<<======New Sales======>> %0A Seller: $vendo %0A Sales : $getSellerSales %0A Montly Sales : $addMonthly %0A Daily Sales : $addDaily %0A Voucher: $user %0A IP: $address %0A MAC: $mac %0A Amount: $amt %0A Extended: $ext %0A Total Time: $totaltime %0A  %0A Total Today Sales : $getSales %0A Total Monthly Sales : $getMonthlySales %0A Active Users: $uactive%0A <<=====================>>" keep-result=no;};
 		} else={ 
 			:local comment "VendoSales,$amt,0,0";
 			/system script add name=$vendo owner=admin comment=$comment source="$amt";

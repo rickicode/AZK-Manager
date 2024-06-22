@@ -97,6 +97,9 @@ if (isset($_POST['purchase'])) {
                                 <h5 class="card-header"><?= $MikroTik['currency'] . $P['price']; ?> - <?= secondsToWords($P['duration']); ?><?=  $P['data'] == 0 ? '' : byteFormat($P['data'])?></h5>
                                 <div class="card-body d-grid gap-2 text-sm">
                                     <p class="card-title">
+                                        Durasi: <span class="text-primary fw-bold"><?= secondsToWords($P['duration']); ?></span><br>
+                                        Valid: <span class="text-primary fw-bold"><?= secondsToWords($P['validity']); ?></span> <small class="text-secondary"> ( Pausable )</small><br>
+                                        Kuota: <span class="text-primary fw-bold"><?= $P['data'] == "0" ? 'Unlimited' : byteFormat($P['data']) ?></span><br>
                                         Duration: <span class="text-primary fw-bold"><?= secondsToWords($P['duration']); ?></span><br>
                                         Validity: <span class="text-primary fw-bold"><?= secondsToWords($P['validity']); ?></span> <small class="text-secondary"> ( Pausable )</small><br>
                                         Data: <span class="text-primary fw-bold"><?= $P['data'] == "0" ? 'Unlimited' : byteFormat($P['data']) ?></span><br>
