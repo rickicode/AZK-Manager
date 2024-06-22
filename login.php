@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
 include "db/_pdo.php";
 $db_file = "db/sqlite-database.sqlite3";
@@ -30,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['mikrotik'] = 1;
                 header('location: /');
-                header('location: index.php');
             } else {
                 $password_err = 'Invalid password';
             }

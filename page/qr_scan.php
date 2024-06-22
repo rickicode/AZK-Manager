@@ -100,9 +100,6 @@ if (isset($_POST['purchase'])) {
                                         Durasi: <span class="text-primary fw-bold"><?= secondsToWords($P['duration']); ?></span><br>
                                         Valid: <span class="text-primary fw-bold"><?= secondsToWords($P['validity']); ?></span> <small class="text-secondary"> ( Pausable )</small><br>
                                         Kuota: <span class="text-primary fw-bold"><?= $P['data'] == "0" ? 'Unlimited' : byteFormat($P['data']) ?></span><br>
-                                        Duration: <span class="text-primary fw-bold"><?= secondsToWords($P['duration']); ?></span><br>
-                                        Validity: <span class="text-primary fw-bold"><?= secondsToWords($P['validity']); ?></span> <small class="text-secondary"> ( Pausable )</small><br>
-                                        Data: <span class="text-primary fw-bold"><?= $P['data'] == "0" ? 'Unlimited' : byteFormat($P['data']) ?></span><br>
                                         <?php if ($_SESSION['adminaccess'] == "yes") { ?>
                                             <!--Server: <span class="text-primary fw-bold"><?= $P['server']; ?></span><br>
                                             hs profile: <span class="text-primary fw-bold"><?= $P['profile']; ?></span>-->

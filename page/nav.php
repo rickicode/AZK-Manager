@@ -23,7 +23,6 @@ if (PDO_FetchAll("SELECT COUNT(*) FROM settings")[0]['COUNT(*)'] != 0) {
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
     <div class="container-fluid">
         <a class="navbar-brand h1" href="/">
-        <a class="navbar-brand h1" href="index.php">
             <img src="src/kint.ico" alt="" width="30" height="24" class="d-inline-block align-text-top">
             AZK Manager
         </a>
@@ -37,10 +36,6 @@ if (PDO_FetchAll("SELECT COUNT(*) FROM settings")[0]['COUNT(*)'] != 0) {
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/qr_scan">Scan</a>
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=qr_scan">Scan</a>
                 </li>
                 <?php
                 if ($_SESSION['adminaccess'] == "yes") {
@@ -59,19 +54,6 @@ if (PDO_FetchAll("SELECT COUNT(*) FROM settings")[0]['COUNT(*)'] != 0) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/subscriber">Subscribers</a>
-                        <a class="nav-link" href="index.php?page=sales">Sales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=active_table">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=users">Users</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=generate">Generate</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=subscriber">Subscribers</a>
                     </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/Kintoyyy/AZK-Manager">Github</a>
@@ -105,7 +87,6 @@ if (PDO_FetchAll("SELECT COUNT(*) FROM settings")[0]['COUNT(*)'] != 0) {
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="/settings">Settings</a></li>
-                            <li><a class="dropdown-item" href="index.php?page=settings">Settings</a></li>
                         </ul>
                     </div>
                 <?php
@@ -121,11 +102,6 @@ if (PDO_FetchAll("SELECT COUNT(*) FROM settings")[0]['COUNT(*)'] != 0) {
                         if ($_SESSION['adminaccess'] == "yes") {
                         ?>
                             <li><a class="dropdown-item" href="/script">Script</a></li>
-                        <li><a class="dropdown-item" href="index.php?page=edit_users">Manage Account</a></li>
-                        <?php
-                        if ($_SESSION['adminaccess'] == "yes") {
-                        ?>
-                            <li><a class="dropdown-item" href="index.php?page=script">Script</a></li>
                         <?php
                         }
                         ?>

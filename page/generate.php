@@ -35,9 +35,6 @@ $getprofile = $API->comm("/ip/hotspot/user/profile/print");
                                         Durasi: <span class="text-primary fw-bold"><?= secondsToWords($P['duration']); ?></span><br>
                                         Valid: <span class="text-primary fw-bold"><?= secondsToWords($P['validity']); ?></span><small class="text-secondary"> ( Pausable )</small><br>
                                         Kuota: <span class="text-primary fw-bold"><?= $P['data'] == 0 ? 'Unlimited' : byteFormat($P['data'], "d", 0) ?></span><br>
-                                        Duration: <span class="text-primary fw-bold"><?= secondsToWords($P['duration']); ?></span><br>
-                                        Validity: <span class="text-primary fw-bold"><?= secondsToWords($P['validity']); ?></span><small class="text-secondary"> ( Pausable )</small><br>
-                                        Data: <span class="text-primary fw-bold"><?= $P['data'] == 0 ? 'Unlimited' : byteFormat($P['data'], "d", 0) ?></span><br>
                                         Server: <span class="text-primary fw-bold"><?= $P['server']; ?></span><br>
                                         Profile: <span class="text-primary fw-bold"><?= $P['profile']; ?></span><br>
                                     </p>
@@ -397,20 +394,6 @@ $getprofile = $API->comm("/ip/hotspot/user/profile/print");
                                 <td style="font-size: 11px;padding-right: 5px;text-align: end;background: #FFECAF;"> Valid: ` + obj.validity + ` </td>
                             </tr>
        
-                    <table class="voucher" style="width: 120px;">
-                        <tbody>
-                            <tr>
-                                <td class="rotate" style="font-weight: bold; border-right: 1px solid black; background-color:` + obj.color + `; -webkit-print-color-adjust: exact;" rowspan="6"><span><?= $MikroTik['currency'] ?> ` + obj.price + `</span></td>
-                                <td style="font-weight: bold ;font-size: 10px;" colspan="2">` + obj.name + `</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 100%; font-weight: bold; font-size: 15px; text-align: center;">` + obj.code + `</td>
-                            </tr>
-                            ` + ((obj.duration >= "0") ? `<tr><td style="font-size: 8px;font-weight: bold;"> Duration:` + obj.duration + ` </td></tr>` : '') + `
-                            ` + ((obj.data != "0") ? `<tr><td style="font-size: 8px;font-weight: bold;"> Data:` + obj.data + ` </td></tr>` : '') + `
-                            <tr>
-                                <td style="font-size: 8px;font-weight: bold;"> Validity:` + obj.validity + ` </td>
-                            </tr>
                         </tbody>
                     </table>
                     `;

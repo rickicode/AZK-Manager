@@ -87,7 +87,6 @@ if ($_SESSION['adminaccess'] == 'yes') {
             <div id="button" class="my-3 d-grid gap-2">
                 <button class="btn btn-success btn-block " name="add">Add MikroTik</button>
                 <a class="btn btn-secondary btn-block" href="/">Back</a>
-                <a class="btn btn-secondary btn-block" href="index.php">Back</a>
             </div>
         </form>
         <div style="overflow-x:auto;">
@@ -136,7 +135,6 @@ if ($_SESSION['adminaccess'] == 'yes') {
         function clear() {
             $('#myform').closest('form').find("input[type=text], textarea").val("");
             $('#button').html('<button class="btn btn-success btn-block " name="add">Add MikroTik</button><a class="btn btn-secondary btn-block" href="/">Back</a>');
-            $('#button').html('<button class="btn btn-success btn-block " name="add">Add MikroTik</button><a class="btn btn-secondary btn-block" href="index.php">Back</a>');
         }
     </script>
 

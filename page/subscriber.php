@@ -114,8 +114,6 @@ if (isset($_POST['paid'])) {
                         $status = $comments[3] ?? 'Error';
                         $amount = $comments[2];
                         $fbUsername = $comments[5] ?? '';
-                        $amount = $comments[4];
-                        $fbUsername = $comments[5];
 
                         echo '<tr>';
                         echo '<td><label class="form-check-label" for="check_list">' . $name . '</label></td>';
@@ -144,7 +142,6 @@ if (isset($_POST['paid'])) {
                         echo "<td><a href='https://www.facebook.com/" . $fbUsername . "'>@" . $fbUsername . "</a></td>";
                         echo '<td><button data-bs-toggle="modal" data-bs-target="#editSub" 
                                 onclick="edit(\'' . $id . '\',\'' . $name . '\',\'' . $client['password'] . '\',\'' . $status . '\',\'' . $comments[4] . '\',\'' . $fbUsername . '\',\'' . $amount . '\',\'' . $comments[1] . '\',\'' . $profile . '\',\'' . ($client['server'] ?? '') . '\',\'' . ($client['mac-address'] ?? '') . '\',\'' . $disabled . '\')" class="btn btn-success btn-sm"><i class="fas fa-pen"></i> Edit</button></td>';
-                                onclick="edit(\'' . $id . '\',\'' . $name . '\',\'' . $client['password'] . '\',\'' . $status . '\',\'' . $amount . '\',\'' . $fbUsername . '\',\'' . $comments[2] . '\',\'' . $comments[1] . '\',\'' . $profile . '\',\'' . ($client['server'] ?? '') . '\',\'' . ($client['mac-address'] ?? '') . '\',\'' . $disabled . '\')" class="btn btn-success btn-sm"><i class="fas fa-pen"></i> Edit</button></td>';
                         echo '</tr>';
                     }
                 }
@@ -279,7 +276,6 @@ if (isset($_POST['paid'])) {
                             <label class="input-group-text">Number</label>
                         </div>
                         <input type="text" class="form-control" value="" id="number" name="number" maxlength="20">
-                        <input type="text" class="form-control" value="" id="number" name="number" maxlength="12">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
